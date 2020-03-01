@@ -9,7 +9,7 @@
         <h2>Let's see if we can make some changes.</h2></br>
         <p>Perhaps we can try to add the word 'success' next to each of our names below:</p><br>
         <ul>
-            <li>Amy:</li>
+            <li>Amy: Hello is it working?</li>
             <li>Sophia:</li><p> Success feels so good don't you think? </p></br>
             <li>Linzi:</li><p>A little success would be nice right now</p></br>
             <li>Sandy:</li>
