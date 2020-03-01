@@ -1,0 +1,37 @@
+CREATE TABLE Users
+(
+ Username varchar(10) not null primary key,
+ FirstName varchar(15) not null,
+ Surname varchar(15) not null,
+ AccessLevel ENUM(“Administrator”, “Friend”),
+ PW varchar(10) not null
+);
+
+CREATE TABLE Addresses
+(
+ ID int not null primary key auto_increment,
+ AddrLine1 varchar(50) not null,
+ AddrLine2 varchar(20),
+ City varchar(15) not null,
+ Postcode varchar(8) not null,
+ Email varchar(30) not null,
+ ContactNumber varchar(11) not null,
+ User varchar(10) not null,
+ Foreign key (User) references Users(Username)
+ ) engine = innodb;
+
+
+CREATE TABLE Items
+(
+ ID int not null primary key auto_increment,
+ Category varchar(20) not null,
+ Headline varchar(40) not null,
+ Description varchar(500) not null,
+ Terms varchar(250),
+ PictureLocation varchar(200),
+ PickupLocation varchar(50),
+ Owner varchar(10) not null,
+ Foreign key (Owner) references Users(Username),
+ Borrower varchar(10),
+ Foreign key (Borrower) references Users(Username)
+ ) engine = innodb;
