@@ -12,7 +12,7 @@
             <li>Amy: Hello is it working?</li>
             <li>Sophia:</li><p> Success feels so good don't you think? </p></br>
             <li>Linzi:</li><p>A little success would be nice right now</p></br>
-            <li>Sandy:</li>
+            <li>Sandy:</li>Hello, hello, are you receiving me, over?</p><br>
             <li>Sarah:</li>
         </ul>
     </body>
