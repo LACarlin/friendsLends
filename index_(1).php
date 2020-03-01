@@ -12,8 +12,8 @@
             <li>Amy: Hello is it working?</li>
             <li>Sophia:</li><p> Success feels so good don't you think right? </p></br>
             <li>Linzi:</li><p>A little success would be nice right now</p></br>
-            <li>Sandy:</li>Hello, hello, are you receiving me, over?</p><br>
-            <li>Sarah:</li>
+            <li>Sandy:</li><p>Hello, hello, are you receiving me, over?</p><br>
+            <li>Sarah:</li><p>Hello, testing testing 123</p><br>
         </ul>
     </body>
 </html>
