@@ -1,0 +1,27 @@
+-- For the time being I've given Administrators access all areas
+-- Friends have Insert access to Items and read access to everything else
+-- We also want to allow owners to amend their personal details and listings but first need to understand how this fits in with current_user/authentication
+-- Script below also creates a test admin and test friend account, and assigns a role to each
+
+
+CREATE ROLE
+	Administrators,
+	Friends;
+
+GRANT ALL
+ON FriendsLends.*
+TO Administrators;
+
+GRANT SELECT
+ON FriendsLends.*
+TO Friends;
+
+GRANT INSERT
+ON FriendsLends.Items
+TO Friends;
+
+CREATE USER 'admin1'@'localhost' IDENTIFIED BY 'admin1pass';
+CREATE USER 'friend1@'localhost' IDENTIFIED BY 'friend1pass';
+
+GRANT Administrators TO 'admin1'@'localhost';
+GRANT Friends TO 'friend1@'localhost';
