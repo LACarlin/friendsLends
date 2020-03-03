@@ -21,7 +21,9 @@ ON FriendsLends.Items
 TO Friends;
 
 CREATE USER 'admin1'@'localhost' IDENTIFIED BY 'admin1pass';
-CREATE USER 'friend1@'localhost' IDENTIFIED BY 'friend1pass';
+CREATE USER 'friend1'@'localhost' IDENTIFIED BY 'friend1pass';
 
 GRANT Administrators TO 'admin1'@'localhost';
-GRANT Friends TO 'friend1@'localhost';
+GRANT Friends TO 'friend1'@'localhost';
+
+GRANT EXECUTE ON PROCEDURE (STOREDPROCEDURENAME) TO Friends;
