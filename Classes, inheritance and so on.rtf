@@ -1,0 +1,71 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh12760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Class 
+\f1\b Users 
+\f0\b0 (Parent)\
+Attributes: ID, Username, Firstname, Lastname, Password\
+Functions: Login, Change own details (SETTER), Search Items (GETTER), Insert listings, Borrow items (SETTER), Change details own listings (SETTER)\
+\
+Class 
+\f1\b Admin
+\f0\b0  (extends 
+\f1\b Users
+\f0\b0 ) (Child)\
+Functions: Add members, Delete members, Change details all listings (SETTER)\
+\
+\
+Class 
+\f1\b Address
+\f0\b0 \
+Attributes: ID, Address1, Address2, City, Postcode, Email, Phone, User_ID\
+Functions: Display address (GETTER), Display contact details (GETTER), Change own details (SETTER)\
+\
+
+\f2\i (Not sure Address is a separate class or should be included with Users)
+\f0\i0 \
+\
+\
+Class 
+\f1\b Items
+\f0\b0  (Parent)\
+Attributes: ID, Category, Headline, Description, Terms, PictureLocation, PickupLocation, Owner, Active\
+Functions: Display items (GETTER), Change to active (SETTER)\
+\
+Class 
+\f1\b ActiveItems
+\f0\b0  (extends 
+\f1\b Items
+\f0\b0 ) (Child)\
+Attributes: Borrower, StartDate, EndDate\
+Functions: Add borrower (SETTER), Add dates (SETTER)\
+\
+Class
+\f1\b  LoanItems
+\f0\b0  (extends 
+\f1\b Items
+\f0\b0 ) (Child)\
+Attributes:\
+Functions: Delete borrower (SETTER), Delete dates (SETTER)\
+\
+\
+
+\f1\b I may be wrong about the following. It\'92s the result of a very cursory google.
+\f0\b0 \
+
+\f2\i (I think items can move in and out of ActiveItems with a function that creates a new item in this class when Active is set to on, and then deletes it when Active is set to off.)\
+(Items currently on loan created as objects in LoanItems class, deleted again when item is marked returned by the owner)\
+\
+Front end - Item is borrowed\
+	-Borrower and dates fields are set\
+	-Item is created as object in class \'91LoanItems\'92\
+	- Item is deleted an as object in class \'91ActiveItems\'92. Still exists as object in class \'91Items\'92\
+Front end - Owner checks \'91Item returned\'92 box.\
+	-Borrower and dates fields reset to null\
+	-Item created as object in class \'92ActiveItems\'92\
+	-Deleted in class \'91LoanItems\'92}
