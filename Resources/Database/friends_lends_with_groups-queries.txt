@@ -1,0 +1,31 @@
+Here are some queries for the new databse, this joins the many to many tables.  You should be able to just change some of the 
+parameters to reurn different results, for example in the last query just change the name AMY for another name (will have to be one thats in 
+a group)
+
+--Brings up user names of the group uni friends
+
+SELECT Username FROM `groups`
+INNER JOIN link_users_groups ON link_users_groups.Groups_FK = Groups_ID
+INNER JOIN users ON users.users_id = link_users_groups.Users_FK
+where Group_name = "uni friends"
+
+
+--Returns firstname, user name and group name for uni group members
+
+SELECT FirstName,Username,Group_name FROM `groups`
+INNER JOIN link_users_groups ON link_users_groups.Groups_FK = Groups_ID
+INNER JOIN users ON users.users_id = link_users_groups.Users_FK where Group_name = "uni friends"
+
+
+--Returns firstname, user name and group name for uni group members using 'like'
+
+SELECT FirstName,Username,Group_name FROM `groups`
+INNER JOIN link_users_groups ON link_users_groups.Groups_FK = Groups_ID
+INNER JOIN users ON users.users_id = link_users_groups.Users_FK where Group_name LIKE '%uni%'
+
+
+--Returns groups that Amy is a member of
+
+SELECT FirstName,Username,Group_name FROM `groups` 
+INNER JOIN link_users_groups ON link_users_groups.Groups_FK = Groups_ID
+INNER JOIN users ON users.users_id = link_users_groups.Users_FK where Firstname = 'Amy'
