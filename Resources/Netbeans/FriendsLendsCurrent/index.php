@@ -3,6 +3,7 @@
 include "User.php";
 include "Admin.php";
 include "Item.php";
+include "frontend.html";
 
 $user1 = new User('borisj', 'Boris', 'Johnson','','10 Downing Street', '','London', 'SW1A 2AA', '', '');
 $item1 = new Item('', 'Hobbies', 'Skateboard', 'Powell Peralta Ripper, Complete, Red/Blue, 7.5inch', '', '','My House', 'sandyf', '','active', '', '');
