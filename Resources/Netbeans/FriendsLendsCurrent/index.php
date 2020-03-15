@@ -1,8 +1,8 @@
 <?php
 
-include "User.php";
-include "Admin.php";
-include "Item.php";
+include "Class/User.php";
+include "Class/Admin.php";
+include "Class/Item.php";
 include "frontend.html";
 
 $user1 = new User('borisj', 'Boris', 'Johnson','','10 Downing Street', '','London', 'SW1A 2AA', '', '');
