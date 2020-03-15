@@ -10,3 +10,4 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+/Resources/Netbeans/FriendsLendsCurrent/nbproject/private/private.properties
