@@ -3,3 +3,10 @@ nbproject/project.properties
 nbproject/project.xml
 /Resources/Netbeans/SandyShared/nbproject/private/
 /Resources/Netbeans/FriendsLendsCurrent/nbproject/private/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
