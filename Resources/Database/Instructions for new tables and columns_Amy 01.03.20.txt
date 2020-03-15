@@ -1,0 +1,29 @@
+--delete all lines starting like this before running code
+--add status column & set status as active
+
+ALTER TABLE items
+ADD active_status TEXT;
+UPDATE items
+SET active_status='active'
+WHERE active_status IS NULL;
+
+--add loan start date & default as null
+
+ALTER TABLE items
+ADD start_loan DATE DEFAULT NULL;
+
+--add loan end date & default as null
+
+ALTER TABLE items
+ADD end_loan DATE DEFAULT NULL;
+
+--create history table
+
+CREATE TABLE history (
+id int not null primary key auto_increment,
+item TEXT,
+borrower TEXT,
+start_loan DATE,
+end_loan DATE);
+
+--note history table is just a skeleton for now
