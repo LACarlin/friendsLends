@@ -5,6 +5,6 @@ FriendsLends is a library aimed at a group of friends. The items in the library 
 
 Steps to create the current working copy are:
 1) Create a new empty database called FriendsLends in myphpadmin
-2) Import "github/Resources/Database/FriendsLends.sql" into the empty database
-3) Run the code detailed in "github/Resources/Instructions for new tables and columns_Amy 01.03.20"
-4) Run the code detailed in "github/Resources/FriendsLendsRoles.txt"
+2) Import "github/Resources/FriendsLends with Login/Database/Copy of Database/FriendsLends.sql" into the empty database
+3) Import the Netbeans project from "github/Resources/FriendsLends with Login/Netbeans Export/FriendsLends.zip"
+4) Run 'login.php' from Netbeans
