@@ -1,0 +1,63 @@
+CREATE TABLE `groups` (
+`gid` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`groupname` varchar(100) NOT NULL UNIQUE
+) engine = innodb AUTO_INCREMENT = 1030;
+
+CREATE TABLE `users` (
+`uid` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`username` varchar(25) NOT NULL UNIQUE,
+`firstname` varchar(100) NOT NULL,
+`surname` varchar(100) NOT NULL,
+`accesslevel` enum("Administrator", "Friend"),
+`userpic` varchar(255),
+`password` varchar(255) NOT NULL,
+`groupid1` int(10) NOT NULL DEFAULT 9999,
+ Foreign key (groupid1) references groups(gid),
+`groupid2` int(10),
+ Foreign key (groupid2) references groups(gid),
+`groupid3` int(10),
+ Foreign key (groupid3) references groups(gid)
+) engine = innodb;
+
+
+CREATE TABLE addresses
+(
+ aid int not null primary key auto_increment,
+ addrline1 varchar(50) not null,
+ addrline2 varchar(20),
+ city varchar(15) not null,
+ postcode varchar(8) not null,
+ email varchar(30) not null,
+ contactnumber varchar(11) not null,
+ userid int(10) not null,
+ Foreign key (userid) references users(uid)
+ ) engine = innodb;
+
+
+CREATE TABLE items
+(
+ iid int not null primary key auto_increment,
+ category varchar(20) not null,
+ headline varchar(40) not null,
+ description varchar(500) not null,
+ terms varchar(500),
+ itempic varchar(255),
+ pickuplocation varchar(50),
+ owner INT(10) not null,  
+ Foreign key (owner) references users(uid), 
+ borrower INT(10),
+ Foreign key (borrower) references users(uid),
+ start_loan DATE DEFAULT NULL,
+ end_loan DATE DEFAULT NULL,
+ active BOOLEAN DEFAULT FALSE
+ ) engine = innodb;
+
+CREATE TABLE history (
+hid int not null primary key auto_increment,
+itemid int,
+Foreign key (itemid) references items(iid),
+borrowerid int(10),
+Foreign key (borrowerid) references users(uid),
+startloan DATE,
+endloan DATE
+) engine = innodb;
