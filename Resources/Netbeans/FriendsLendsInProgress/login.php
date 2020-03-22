@@ -24,7 +24,7 @@ $user = $stmt->fetch();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = filter_input(INPUT_POST, 'username');
             $_SESSION["uid"] = $user['uid'];
-            echo 'Welcome ' . $_SESSION['username'];
+           // echo 'Welcome ' . $_SESSION['username'];
             header('Location: welcome.php');
         } 
             else{

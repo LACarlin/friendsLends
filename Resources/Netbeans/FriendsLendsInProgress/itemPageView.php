@@ -1,8 +1,8 @@
-<html>
-    <?php
+<?php
     session_start();
     $item_value = $_GET['itemname'];
     ?>
+<html>
     <head>
         <title><?php echo $item_value; ?></title>
 
