@@ -1,8 +1,10 @@
 <?php
 // Initialize the session
 session_start();
+require_once "config.php";
+?>
 
-// Check if the user is logged in, if not then redirect him to login page
+<?php
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
@@ -40,17 +42,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <h2>Welcome to your hub for borrowing and lending with your friends!</h2></br>
         </div>
         <?php
-        const DB_DSN = 'mysql:host=localhost;dbname=friendslends';
-        const DB_USER = 'root';
-        const DB_PASS = '';
-
-        try {
-            $pdo = new PDO(DB_DSN, DB_USER, DB_PASS);
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $stmt = $pdo->prepare('SELECT * FROM Items WHERE active=TRUE');
 
         try {
@@ -64,11 +55,24 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         foreach ($item as $key => $value) {
             $picvar = $value['itempic'];
             $itemname = $value['headline'];
+            $borrower = $value['borrower'];
             ?>
-            <img src = <?php $picvar; ?></br>
-            <h2><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h2></br>
-        <?php }
-        ?>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src=<?php $picvar; ?> alt="Item image">
+                             <div class="card-body">
+                            <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4></br>
+                                <?php
+                                if ($borrower !== null) {
+                                    echo "<p>On loan currently!</p>";
+                                }
+                                ?> 
+                            <?php }
+                            ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
-
