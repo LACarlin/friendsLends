@@ -1,9 +1,9 @@
-<html>
-    <?php
+<?php
     session_start();
     $item_value = $_GET['itemname'];
     require_once "config.php";
     ?>
+<html>
     <head>
         <title><?php echo $item_value; ?></title>
 
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="SARAH'S CREATE ITEM PAGE">Create new item</a>
+                <a class="nav-item nav-link" href="CreateNewItem.php">Create new item</a>
                 <a class="nav-item nav-link" href="SOPHIA'S CONTACT PAGE">Contact</a>
                 <a class="nav-item nav-link" href="mydashboard.php">My account dashboard</a>
                 <a class="nav-item nav-link" href="logout.php">Log out</a>
