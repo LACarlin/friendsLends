@@ -57,22 +57,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             $itemname = $value['headline'];
             $borrower = $value['borrower'];
             ?>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=<?php $picvar; ?> alt="Item image">
-                             <div class="card-body">
-                            <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4></br>
-                                <?php
-                                if ($borrower !== null) {
-                                    echo "<p>On loan currently!</p>";
-                                }
-                                ?> 
-                            <?php }
-                            ?>
-                    </div>
-                </div>
-            </div>
+
+            <?php echo '<img src="' . $picvar . '" alt="Item Pic" style="float:center;width:200px;height:auto;margin-right:15px;">'; ?>
+                <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4></br>
+                    <?php
+                    if ($borrower !== null) {
+                        echo "<p>On loan currently!</p></br>";
+                    }
+                    ?> 
+                <?php }
+                ?>
         </div>
-    </body>
+    </div>
+</div>
+</div>
+</body>
 </html>
