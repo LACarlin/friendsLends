@@ -17,6 +17,18 @@ h2 {
     font-weight: Bold
 }
 
+h3{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18pt;
+    font-weight: Normal;
+}
+
+h4{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14pt;
+    font-weight: Normal; 
+}
+
 p, label {
     font-family: 'Quicksand', sans-serif;
     font-size: 14pt;

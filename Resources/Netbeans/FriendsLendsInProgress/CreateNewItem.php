@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
         <meta charset="utf-8">
 
         <title>sign in page</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
         <link href="CSS-stylesheet/FriendsLendsCSS.css" rel="stylesheet" type="text/css"/>
 
         <style>
@@ -40,7 +42,15 @@ if (isset($_POST['submit'])) {
     </head>
 
     <body>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="CreateNewItem.php">Create new item</a>
+                <a class="nav-item nav-link" href="Contact.php">Contact</a>
+                <a class="nav-item nav-link" href="mydashboard.php">My account dashboard</a>
+                <a class="nav-item nav-link" href="logout.php">Log out</a>
+            </div>
+        </nav>
         <div class ="newitem"> 
             <h2>Create new item</h2>
 
@@ -59,7 +69,7 @@ if (isset($_POST['submit'])) {
                     <option value="Other">Other</option>
                 </select>
                 <div class ="error">
-<?php echo $errors['category'] ?? '' ?>
+                    <?php echo $errors['category'] ?? '' ?>
                 </div>
 
                 <label>headline</label>
@@ -85,13 +95,13 @@ if (isset($_POST['submit'])) {
                 <input type="file" id="img" name="picture" accept="image/*">
 
                 <div class ="error">
-<?php echo $errors['picture'] ?? '' ?>
+                    <?php echo $errors['picture'] ?? '' ?>
 
 
                     <label>Pickup location</label>
                     <input type="text" name="pickuplocation">
                     <div class ="error">
-                    <?php echo $errors['pickuplocation'] ?? '' ?>
+                        <?php echo $errors['pickuplocation'] ?? '' ?>
                     </div>
 
                     <input type="Submit" value="submit" name="submit">
