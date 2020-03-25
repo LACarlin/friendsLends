@@ -39,7 +39,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </nav>
 
         <div class="page-header">
-            <img src="user-images/friendslendsdraftlogo.jpg" alt="logo" align="middle" width="400px"/> 
+            <img src="user-images/AmysLogo.png" alt="logo" align="middle" width="450px"/> 
             <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]) . '!'; ?></b></br>
                 <h2>Welcome to your hub for borrowing and lending with your friends!</h2></br>
         </div>
@@ -59,7 +59,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             $itemname = $value['headline'];
             $borrower = $value['borrower'];
             ?>
-
             <?php echo '<img src="' . $picvar . '" alt="Item Pic" style="float:center;width:200px;height:auto;margin-right:15px;">'; ?>
             <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4></br>
                 <?php

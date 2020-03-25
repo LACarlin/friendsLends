@@ -11,6 +11,7 @@ and open the template in the editor.
         <link href="CSS-stylesheet/FriendsLendsCSS.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <img src="user-images/AmysLogo.png" alt="logo" align="top" width="200px"/>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
@@ -80,6 +81,7 @@ and open the template in the editor.
                     </div>
                 </div>
         </div>
+        </br>
         <div class ="row">
             <div style="border: 0px solid">
                 <input type="submit" value="Submit" style="display: block; margin: 0 auto;">
@@ -87,5 +89,6 @@ and open the template in the editor.
         </div>
 
     </form>
+            </br>
 </body>
 </html>

@@ -27,6 +27,7 @@ require_once "config.php";
     </head>
 
     <body>
+        <img src="user-images/AmysLogo.png" alt="logo" align="left" width="200px"/>
         <!--Paste this section below at the top of your 'body' section for the navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-nav">

@@ -13,7 +13,7 @@ require_once "config.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
+        <img src="user-images/AmysLogo.png" alt="logo" align="top" width="200px"/>
         <!--Navbar section -->
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
