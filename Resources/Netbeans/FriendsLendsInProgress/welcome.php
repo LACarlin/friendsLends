@@ -60,7 +60,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             $borrower = $value['borrower'];
             ?>
             <?php echo '<img src="' . $picvar . '" alt="Item Pic" style="float:center;width:200px;height:auto;margin-right:15px;">'; ?>
-            <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4></br>
+            <h4 class="item-title"><a href="itemPageView.php?itemname=<?php echo $itemname ?>"><?php echo $itemname; ?></a></h4>
                 <?php
                 if ($borrower !== null) {
                     echo "<p>On loan currently!</p></br>";
