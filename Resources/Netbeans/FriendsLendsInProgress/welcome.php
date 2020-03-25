@@ -19,6 +19,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
         <!--You will need to insert this link below in your 'head' to get the navbar to show--> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <link href="CSS-stylesheet/FriendsLendsCSS.css" rel="stylesheet" type="text/css"/>
         <style type="text/css">
 
             body{ font: 14px sans-serif; text-align: center; }
@@ -31,7 +32,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="CreateNewItem.php">Create new item</a>
-                <a class="nav-item nav-link" href="SOPHIA'S CONTACT PAGE">Contact</a>
+                <a class="nav-item nav-link" href="Contact.php">Contact</a>
                 <a class="nav-item nav-link" href="mydashboard.php">My account dashboard</a>
                 <a class="nav-item nav-link" href="logout.php">Log out</a>
             </div>

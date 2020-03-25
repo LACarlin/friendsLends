@@ -1,0 +1,25 @@
+body {
+    background-color: #ccddff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26pt;
+    font-weight: Bold;
+    text-align: Center;
+
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18pt;
+    font-weight: Bold
+}
+
+p, label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14pt;
+    font-weight: Semi Bold;
+}
+
