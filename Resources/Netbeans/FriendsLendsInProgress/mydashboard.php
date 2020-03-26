@@ -17,7 +17,7 @@ require_once "config.php";
     <head>
         <meta charset="UTF-8">
         <title>My Account Dashboard</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
         <link href="CSS-stylesheet/FriendsLendsCSS.css" rel="stylesheet" type="text/css"/>
@@ -27,43 +27,17 @@ require_once "config.php";
     </head>
 
     <body>
-    <!-- Sarah Navbar -->
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#"><img src="user-images/AmysLogo.png" alt="Friends Lends" style="width: 200px;"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-         <a class="nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-      <a class="nav-link" href="createnewitem.php">Create New Item</a>
-      </li>
-      <li class="nav-item active">
-         <a class="nav-link" href="contact.php">Contact</a>
-      </li>
-      <li class="nav-item active">
-      <a class="nav-link" href="mydashboard.php">My Account Dashboard</a>
-      </li>
-      <li class="nav-item active">
-         <a class="nav-link" href="logout.php">Logout</a>
-      </li>
-         </ul>
-      </div>
-</nav>
-        </div>
-       <!-- Sarah Navbar End -->  
-        
-        
-        
-        
-        
-        
-       
+        <img src="user-images/AmysLogo.png" alt="logo" align="left" width="200px"/>
+        <!--Paste this section below at the top of your 'body' section for the navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="createnewitem.php">Create new item</a>
+                <a class="nav-item nav-link" href="contact.php">Contact</a>
+                <a class="nav-item nav-link" href="mydashboard.php">My account dashboard</a>
+                <a class="nav-item nav-link" href="logout.php">Log out</a>
+            </div>
+        </nav>
 
         <div>         
             <h1>Hey there <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>, welcome to your dashboard!</h1>           
@@ -85,8 +59,18 @@ require_once "config.php";
                     $stmt = $pdo->prepare("SELECT * FROM users WHERE uid = ?");
                     $stmt->execute([$_SESSION['uid']]);
                     foreach ($stmt as $row) {
-                        echo '<img src="' . $row['userpic'] . '"alt="Profile Pic" style="width:140px;height:auto;">' . "<br>" .
-                        "<h4>" . 'Username:  ' . $row['username'] . "</h4>" . "<h4>" . 'Name:  ' . $row['firstname'] . " " . $row['surname'] . "</h4>" . "<h4>" . "Your Groups:" . $row['groupid1'] . "</h4>";
+                        echo '<img src="' . $row['userpic'] . '"alt="Profile Pic" style="width:140px;height:auto;">' . "<br>";
+                        echo '<h4> Username:  ' . $row['username'] ."</h4>";
+                        echo '<h4> Name:  ' . $row['firstname'] . " " . $row['surname'] . "</h4>";
+                        echo '<h4>Your Groups:<br>';
+                    echo $row['groupid1'].'<br>';
+                    if ($row['groupid2'] !== NULL){
+                        echo $row['groupid2']."<br>";
+                        };
+                    if ($row['groupid3'] !== NULL){
+                        echo $row['groupid3']."</h4><br>";
+                        };    
+                    echo '<br>';    
                     }
                     unset($stmt);
 
@@ -225,9 +209,7 @@ require_once "config.php";
                 <a href="logout.php" class="btn btn-primary">Sign Out of Your Account</a>
             </p>           
         </div>   
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     </body>
 </html>
 

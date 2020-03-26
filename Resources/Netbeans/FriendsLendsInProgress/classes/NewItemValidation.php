@@ -138,7 +138,7 @@ class NewItemValidation{
         $filename = $last_id . '.' . $extension;       
            
       
-        $target = __DIR__ . '\\..\\user-images\\' . $filename;
+        $target = __DIR__ . '/../user-images/' . $filename;
          if (move_uploaded_file($this->filedata['picture']['tmp_name'], $target)) {
             $response = array(
                 "type" => "success",
@@ -151,7 +151,7 @@ class NewItemValidation{
             );
         }
         
-              $picpath = '/user-images/' . $filename;
+              $picpath = 'user-images/' . $filename;
         $image = $prep->prepare('UPDATE items SET itempic=? WHERE iid =? ');
         $image->bindValue(1,$picpath);
         $image->bindValue(2,$last_id);
