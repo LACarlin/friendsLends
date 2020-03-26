@@ -36,3 +36,8 @@ p, label {
     font-weight: Semi Bold;
 }
 
+.nav-link	{
+	font-size: larger;
+    font-weight: bold;
+}
+

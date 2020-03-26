@@ -7,24 +7,42 @@ require_once "config.php";
     <head>
         <title><?php echo $item_value; ?></title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="CSS-stylesheet/FriendsLendsCSS.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <img src="user-images/AmysLogo.png" alt="logo" align="top" width="200px"/>
-        <!--Navbar section -->
+        <!-- Sarah Navbar -->
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"><img src="user-images/AmysLogo.png" alt="Friends Lends" style="width: 200px;"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="CreateNewItem.php">Create new item</a>
-                <a class="nav-item nav-link" href="Contact.php">Contact</a>
-                <a class="nav-item nav-link" href="mydashboard.php">My account dashboard</a>
-                <a class="nav-item nav-link" href="logout.php">Log out</a>
-            </div>
-        </nav>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+         <a class="nav-link active" href="welcome.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="createnewitem.php">Create New Item</a>
+      </li>
+      <li class="nav-item active">
+         <a class="nav-link" href="contact.php">Contact</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="mydashboard.php">My Account Dashboard</a>
+      </li>
+      <li class="nav-item active">
+         <a class="nav-link" href="logout.php">Logout</a>
+      </li>
+         </ul>
+      </div>
+</nav>
+        </div>
+       <!-- Sarah Navbar End -->  
 
         <?php
         //setting start loan timestamp
